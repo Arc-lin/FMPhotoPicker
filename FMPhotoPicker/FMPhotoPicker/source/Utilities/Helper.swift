@@ -51,7 +51,7 @@ class Helper: NSObject {
     static func requestAVAsset(asset: PHAsset, complete: @escaping (AVAsset?) -> Void) {
         guard asset.mediaType == .video else { return complete(nil) }
         
-        PHImageManager().requestAVAsset(forVideo: asset, options: nil) { (asset, _, _) in
+        PHImageManager().requestAVAsset(forVideo: asset, options: nil) { (asset, _, _) inset
             DispatchQueue.main.async {
                 complete(asset)
             }
@@ -163,7 +163,7 @@ class Helper: NSObject {
     }
     
     static func openIphoneSetting() {
-        UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
+        /// UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
     }
     
     static func requestAuthorizationForPhotoAccess(authorized: @escaping () -> Void, rejected: @escaping () -> Void) {

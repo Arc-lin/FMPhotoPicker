@@ -51,7 +51,7 @@ class Helper: NSObject {
     static func requestAVAsset(asset: PHAsset, complete: @escaping (AVAsset?) -> Void) {
         guard asset.mediaType == .video else { return complete(nil) }
         
-        PHImageManager().requestAVAsset(forVideo: asset, options: nil) { (asset, _, _) inset
+        PHImageManager().requestAVAsset(forVideo: asset, options: nil) { (asset, _, _) in
             DispatchQueue.main.async {
                 complete(asset)
             }
